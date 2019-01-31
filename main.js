@@ -1,5 +1,5 @@
 const { fromEvent, merge } = rxjs;
-const { throttleTime, distinctUntilChanged } = rxjs.operators;
+const { throttleTime } = rxjs.operators;
 function $(selector) {
 	return document.querySelector(selector);
 }
@@ -52,17 +52,18 @@ var Menu = {
 			Menu.menus.push(elm);
 			return fromEvent(elm, "click");
 		});
-		merge(...obs).pipe(distinctUntilChanged(),throttleTime(1000)).subscribe(ev => {
+		merge(...obs).pipe(throttleTime(1600)).subscribe(ev => {
+			if (ev.target.classList.contains("sel")) {
+				return;
+			}
 			if (Ctrl.isSp()) {
 				Ctrl.toggleMenu();
 			}
-			Menu.mask.style.display = "block";
 			Menu.mask.classList.add("on");
 			setTimeout(() => {
 				Menu.change(ev.target.dataset.index);
-				Menu.mask.classList.remove("on");
-				setTimeout(() => {Menu.mask.style.display = "none"}, 400);
-			}, 500);
+			}, 800);
+			setTimeout(() => {Menu.mask.classList.remove("on");}, 1600);
 		});
 	},
 	change(page) {

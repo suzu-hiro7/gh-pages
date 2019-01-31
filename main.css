@@ -5,12 +5,14 @@ body, ul {
 	padding: 0;
 }
 h1 {
-	margin: 20px 0;
-	letter-spacing: 2px;
+	margin: 10px 0;
+	font-size: 2.5em;
+	letter-spacing: 5px;
+	font-family: 'Comic Sans MS';
 }
 .container {
 	position: relative;
-	max-width: 960px;
+	max-width: 900px;
 	margin: 0 auto;
 }
 header {
@@ -21,10 +23,18 @@ header {
 	color: white;
 	background: linear-gradient(#222, #393939, #666);
 }
+.update {
+	position: absolute;
+	top: 32px;
+	right: 0;
+	font-size: .8rem;
+	font-style: italic;
+	text-decoration: underline;
+}
 .menu-wrapper {
 	position: absolute;
 	right: 0;
-	bottom: -25px;
+	bottom: -28px;
 }
 .menu {
 	list-style: none;
@@ -64,44 +74,55 @@ header {
 	z-index: 50;
 }
 #content {
-	margin-top: 100px;
+	margin-top: 110px;
 }
 article {
 	display: none;
 }
 article.sel {
 	display: block;
+	z-index: 1;
 }
 .mask {
 	display: none;
 	position: fixed;
-	background: #666;
+	background: #333;
 	top: 100px;
 	width: 100%;
 	min-height: calc(100vh - 100px);
 	opacity: 0;
-	transition: opacity .4s linear;
 }
 .mask.on {
-	opacity: 1;
+	display: block;
+	animation: switchContents 1.6s ease-in-out;
 }
+@keyframes switchContents {
+	0% {left: -100%; opacity: 0;}
+	40% {left: 0; opacity: 1;}
+	60% {left: 0; opacity: 1;}
+	100% {left: 100%; opacity: 0;}
+}
+
 @media screen and (max-width: 480px) {
 	header {
 		height: 70px;
 	}
 	#content {
-		margin-top: 70px;
+		margin-top: 76px;
 	}
 	h1 {
 		margin-top: 15px;
 		font-size: 1.7em;
 		letter-spacing: 0;
 	}
+	.update {
+		display: none;
+	}
 	.container {
 		padding: 0 14px;
 	}
 	.menu-wrapper {
-		bottom: -3px;
+		bottom: -6px;
 	}
 	.humberger {
 		display: block;
@@ -142,7 +163,7 @@ article.sel {
 	}
 	.menu-title {
 		display: block;
-		positon: relative;
+		position: relative;
 	}
 	.menu li:not(.menu-title) {
 		text-align: left;
@@ -164,5 +185,49 @@ article.sel {
 	.mask {
 		top: 70px;
 		min-height: calc(100vh - 70px);
+	}
+	@keyframes switchContents {
+		0% { opacity: 0;}
+		40% { opacity: 1;}
+		60% { opacity: 1;}
+		100% { opacity: 0;}
+	}
+}
+
+/* profile */
+.profile {
+	width: 700px;
+	margin:20px auto 10px;
+	border-collapse: collapse;
+}
+.profile caption {
+	text-align: left;
+	padding: 10px;
+	font-family: 'Comic Sans MS';
+	font-size: 1.5em;
+}
+.profile tr {
+	border-top: dotted 1px #888;
+}
+.profile tr:last-of-type {
+	border-bottom: dotted 1px #888;
+}
+.profile th {
+	width: 150px;
+	font-weight: normal;
+	text-align: left;
+}
+.profile td, .profile th {
+	padding: 6px 10px;
+}
+@media screen and (max-width: 480px) {
+	.profile {
+		width: 100%;
+	}
+	.profile th {
+		width: 20%;
+	}
+	.profile td, .profile th {
+		font-size: .9rem;
 	}
 }
