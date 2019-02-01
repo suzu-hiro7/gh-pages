@@ -1,5 +1,7 @@
 @charset "utf-8";
-
+body {
+	z-index: 1;
+}
 body, ul {
 	margin: 0;
 	padding: 0;
@@ -22,6 +24,7 @@ header {
 	width: 100vw;
 	color: white;
 	background: linear-gradient(#222, #393939, #666);
+	z-index: 80;
 }
 .update {
 	position: absolute;
@@ -81,7 +84,6 @@ article {
 }
 article.sel {
 	display: block;
-	z-index: 1;
 }
 .mask {
 	display: none;
@@ -167,15 +169,16 @@ article.sel {
 	}
 	.menu li:not(.menu-title) {
 		text-align: left;
-		padding: 5px 5px 5px 38px;
+		padding: 8px 5px 8px 40px;
 		position: relative;
+		letter-spacing: 2px;
 	}
 	.menu li:not(.menu-title)::before {
 		font-family: "FontAwesome";
 		content: "\f111";
 		position: absolute;
 		left: 15px;
-		top: 8px;
+		top: 10px;
 	}
 	.menu li.sel {
 		font-weight: normal;
@@ -196,7 +199,7 @@ article.sel {
 
 /* profile */
 .profile {
-	width: 700px;
+	width: 760px;
 	margin:20px auto 10px;
 	border-collapse: collapse;
 }
@@ -228,6 +231,56 @@ article.sel {
 		width: 20%;
 	}
 	.profile td, .profile th {
+		font-size: .9rem;
+	}
+}
+
+/** about */
+.about .a_title {
+	margin: 0;
+	padding: 0;
+	display: none;
+	font-family: 'Comic Sans MS';
+}
+.about dl {
+	width: 760px;
+	margin:0 auto 10px;
+	position: relative;
+	top: 20px;
+}
+.about dt {
+	margin-top: 20px;
+	border-left: solid 4px #083;
+	background: #f1fff1;
+	padding: 5px 8px;
+	letter-spacing: 2px;
+}
+.about dd {
+	padding: 14px 6px 10px;
+	line-height: 2;
+	margin-inline-start: 10px;
+}
+@media screen and (max-width: 480px) {
+	.about .a_title {
+		display: block;
+		padding-top: 12px;
+		font-family: 'HG正楷書体-PRO';
+    font-weight: bold;
+    font-size: 1.3em;
+	}
+	.about dl {
+		width: 100%;
+		top: 14px;
+	}
+	.about dl dt:first-of-type {
+		margin-top: 0;
+	}
+	.about dt {
+		margin-top: 10px;
+		font-size: .9rem;
+	}
+	.about dd {
+		margin-inline-start: 6px;
 		font-size: .9rem;
 	}
 }
