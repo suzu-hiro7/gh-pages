@@ -1,3 +1,4 @@
+@import url(./fontawesome/css/all.min.css);
 @charset "utf-8";
 body {
 	z-index: 1;
@@ -124,15 +125,17 @@ article.sel {
 		padding: 0 14px;
 	}
 	.menu-wrapper {
-		bottom: -6px;
+		bottom: -8px;
 	}
 	.humberger {
 		display: block;
 	}
 	.menu-title h2 {
 		margin: 0 0 0 -10px;
-		padding: 10px;
+		padding: 14px 0 14px 14px;;
+		font-size: 1.6em;
 		text-align: left;
+		font-family: 'Comic Sans MS';
 	}
 	.menu-title p {
 		margin: 0 0 0 -10px;
@@ -145,7 +148,7 @@ article.sel {
 	}
 	.close {
 		position: absolute;
-		top: 7px;
+		top: 12px;
 		right: 10px;
 		font-size: 1.8em;
 	}
@@ -169,7 +172,7 @@ article.sel {
 	}
 	.menu li:not(.menu-title) {
 		text-align: left;
-		padding: 8px 5px 8px 40px;
+		padding: 10px 5px 10px 40px;
 		position: relative;
 		letter-spacing: 2px;
 	}
@@ -178,7 +181,7 @@ article.sel {
 		content: "\f111";
 		position: absolute;
 		left: 15px;
-		top: 10px;
+		top: 12px;
 	}
 	.menu li.sel {
 		font-weight: normal;
