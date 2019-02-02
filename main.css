@@ -179,6 +179,7 @@ article.sel {
 	.menu li:not(.menu-title)::before {
 		font-family: "Font Awesome 5 Free";
 		content: "\f111";
+		font-weight: 900;
 		position: absolute;
 		left: 15px;
 		top: 12px;
