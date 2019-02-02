@@ -62,6 +62,7 @@ var Menu = {
 			Menu.mask.classList.add("on");
 			setTimeout(() => {
 				Menu.change(ev.target.dataset.index);
+				window.scrollTo(0, 0);
 			}, 800);
 			setTimeout(() => {Menu.mask.classList.remove("on");}, 1600);
 		});
