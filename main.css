@@ -177,7 +177,7 @@ article.sel {
 		letter-spacing: 2px;
 	}
 	.menu li:not(.menu-title)::before {
-		font-family: "FontAwesome";
+		font-family: "Font Awesome 5 Free";
 		content: "\f111";
 		position: absolute;
 		left: 15px;
