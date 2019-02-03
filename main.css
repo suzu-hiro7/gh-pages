@@ -32,7 +32,6 @@ header {
 	top: 32px;
 	right: 0;
 	font-size: .8rem;
-	font-style: italic;
 	text-decoration: underline;
 }
 .menu-wrapper {
@@ -48,8 +47,7 @@ header {
 	display: none;
 }
 .menu li {
-	padding: 0 0 0 10px;
-	min-width: 100px;
+	margin-left: 28px;
 	text-align: center;
 	cursor: pointer;
 }
@@ -170,6 +168,9 @@ article.sel {
 		display: block;
 		position: relative;
 	}
+	.menu li {
+		margin-left: 0;
+	}
 	.menu li:not(.menu-title) {
 		text-align: left;
 		padding: 10px 5px 10px 40px;
@@ -239,6 +240,82 @@ article.sel {
 	}
 }
 
+/** acordion */
+.accordion > section {
+	width: 100%;
+	margin-top: 15px;
+}
+.accordion > section + section{
+	margin-top: 20px;
+}
+
+.accordion .header {
+	border: solid 1px #777;
+	border-radius: 4px;
+	background: #3366ee;
+	padding: 4px 10px;
+	display: flex;
+}
+.accordion .title {
+	margin-right: auto;
+	font-weight: bold;
+	letter-spacing: 2px;
+	font-size: 1.4em;
+	padding-left: 5px;
+	color: white;
+}
+.accordion .star {
+	color: #eeee00;
+	padding-top: 2px;
+	margin-right: 10px;
+	font-size: 1.3em;
+}
+.accordion .header > i {
+	font-size: 1.8em;
+	color: white;
+  margin: 0 4px 0 12px;
+	cursor: pointer;
+	line-height: 1.2;
+	transition: transform .3s linear;
+}
+.accordion section.open .header {
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+.accordion section.open .header > i {
+	transform: rotate(180deg);
+}
+.accordion .detail {
+	border: solid 1px #777;
+	border-top: none;
+	overflow: hidden;
+	padding: 0 10px;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	height: 0;
+	opacity: 0;
+	transition: all .3s linear;
+}
+.accordion section.open .detail {
+	opacity: 1;
+	padding: 10px;
+	height: auto;
+}
+
+@media screen and (max-width: 480px) {
+	.accordion > section {
+		margin-top: 10px;
+	}
+	.accordion > section + section{
+		margin-top: 10px;
+	}
+}
+
+/** skill */
+.skill {
+	padding-top: 5px;
+}
+
 /** simple article */
 .simple .a_title {
 	margin: 0;
@@ -288,6 +365,8 @@ article.sel {
 		font-size: .9rem;
 	}
 }
+
+
 
 /** mindset */
 .mindset dt {

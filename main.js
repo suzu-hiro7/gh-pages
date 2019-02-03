@@ -76,6 +76,21 @@ var Menu = {
 		Menu.contents[page].classList.add("sel");
 	}
 };
+
+var Skill = {
+	init() {
+		Array.from($$(".skill .header > i")).forEach(elm => {
+			fromEvent(elm, "click").pipe(throttleTime(500)).subscribe(ev => {
+				const sec = ev.target.parentNode.parentNode;
+				if (sec.classList.contains("open")) {
+					sec.classList.remove("open");
+				} else {
+					sec.classList.add("open");
+				}
+			});
+		});
+	}
+}
 window.onload = function() {
-	[Ctrl, Menu].forEach(m => {m.init();});
+	[Ctrl, Menu, Skill].forEach(m => {m.init();});
 };
