@@ -112,7 +112,7 @@ article.sel {
 		margin-top: 76px;
 	}
 	h1 {
-		margin-top: 15px;
+		margin-top: 18px;
 		font-size: 1.7em;
 		letter-spacing: 0;
 	}
@@ -123,7 +123,7 @@ article.sel {
 		padding: 0 14px;
 	}
 	.menu-wrapper {
-		bottom: -8px;
+		bottom: -5px;
 	}
 	.humberger {
 		display: block;
@@ -241,6 +241,13 @@ article.sel {
 }
 
 /** acordion */
+.accordion .a_title {
+	margin: 0;
+	padding: 0;
+	display: none;
+	font-family: 'Comic Sans MS';
+}
+
 .accordion > section {
 	width: 100%;
 	margin-top: 15px;
@@ -250,30 +257,66 @@ article.sel {
 }
 
 .accordion .header {
-	border: solid 1px #777;
-	border-radius: 4px;
-	background: #3366ee;
+	border-radius: 6px;
 	padding: 4px 10px;
 	display: flex;
+}
+.accordion section.blue .header {
+	background: linear-gradient(#2244cc, #8899ff);
+}
+.accordion section.blue .detail {
+	background: #eef;
+}
+.accordion section.red .header {
+	background: linear-gradient(#992222, #ff6666);
+}
+.accordion section.red .detail {
+	background: #fee;
+}
+.accordion section.green .header {
+	background: linear-gradient(#006600, #44bb44)
+}
+.accordion section.green .detail {
+	background: #efe;
 }
 .accordion .title {
 	margin-right: auto;
 	font-weight: bold;
 	letter-spacing: 2px;
-	font-size: 1.4em;
+	font-size: 26px;
 	padding-left: 5px;
 	color: white;
+	line-height: 40px;
+}
+.accordion .title > span {
+	font-weight: normal;
+	font-size: 12px;
+	display: inline-block;
+	margin-left: 5px;
+	letter-spacing: 1px;
+	vertical-align: middle;
+}
+.accordion .title > span::before {
+	content: "(";
+}
+.accordion .title > span::after {
+	content: ")";
 }
 .accordion .star {
 	color: #eeee00;
-	padding-top: 2px;
-	margin-right: 10px;
-	font-size: 1.3em;
+	margin-right: 5px;
+	font-size: 16px;
+}
+.accordion .star i {
+	line-height: 40px;
+}
+.accordion .star i + i {
+	margin-left: 4px;
 }
 .accordion .header > i {
 	font-size: 1.8em;
 	color: white;
-  margin: 0 4px 0 12px;
+  margin: 2px 4px 0 12px;
 	cursor: pointer;
 	line-height: 1.2;
 	transition: transform .3s linear;
@@ -286,12 +329,11 @@ article.sel {
 	transform: rotate(180deg);
 }
 .accordion .detail {
-	border: solid 1px #777;
 	border-top: none;
 	overflow: hidden;
 	padding: 0 10px;
-	border-bottom-left-radius: 4px;
-	border-bottom-right-radius: 4px;
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
 	height: 0;
 	opacity: 0;
 	transition: all .3s linear;
@@ -303,11 +345,17 @@ article.sel {
 }
 
 @media screen and (max-width: 480px) {
+	.accordion .a_title {
+		display: block;
+		padding-top: 8px;
+    font-weight: bold;
+    font-size: 1.3em;
+	}
 	.accordion > section {
-		margin-top: 10px;
+		margin-top: 12px;
 	}
 	.accordion > section + section{
-		margin-top: 10px;
+		margin-top: 15px;
 	}
 }
 
@@ -345,7 +393,6 @@ article.sel {
 	.simple .a_title {
 		display: block;
 		padding-top: 12px;
-		font-family: 'HG正楷書体-PRO';
     font-weight: bold;
     font-size: 1.3em;
 	}
