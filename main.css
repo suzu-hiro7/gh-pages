@@ -260,6 +260,7 @@ article.sel {
 	border-radius: 6px;
 	padding: 4px 10px;
 	display: flex;
+	cursor: pointer;
 }
 .accordion section.blue .header {
 	background: linear-gradient(#2244cc, #8899ff);
@@ -306,6 +307,7 @@ article.sel {
 	color: #eeee00;
 	margin-right: 5px;
 	font-size: 16px;
+	width: 90px;
 }
 .accordion .star i {
 	line-height: 40px;
@@ -317,7 +319,6 @@ article.sel {
 	font-size: 1.8em;
 	color: white;
   margin: 2px 4px 0 12px;
-	cursor: pointer;
 	line-height: 1.2;
 	transition: transform .3s linear;
 }

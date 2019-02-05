@@ -79,9 +79,9 @@ var Menu = {
 
 var Skill = {
 	init() {
-		Array.from($$(".skill .header > i")).forEach(elm => {
+		Array.from($$(".skill .header")).forEach(elm => {
 			fromEvent(elm, "click").pipe(throttleTime(500)).subscribe(ev => {
-				const sec = ev.target.parentNode.parentNode;
+				const sec = ev.target.parentNode;
 				if (sec.classList.contains("open")) {
 					sec.classList.remove("open");
 				} else {
