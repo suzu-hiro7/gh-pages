@@ -81,7 +81,10 @@ var Skill = {
 	init() {
 		Array.from($$(".skill .header")).forEach(elm => {
 			fromEvent(elm, "click").pipe(throttleTime(500)).subscribe(ev => {
-				const sec = ev.target.parentNode;
+				let sec = ev.target.parentNode;
+				while (sec.tagName.toLowerCase() != "section" || !sec.parentNode) {
+					sec = sec.parentNode;
+				}
 				if (sec.classList.contains("open")) {
 					sec.classList.remove("open");
 				} else {
