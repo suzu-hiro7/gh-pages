@@ -353,6 +353,43 @@ article.sel {
 	height: auto;
 }
 
+.accordion .detail .note {
+	padding: 10px 15px;
+	margin: 5px;
+	background: #f1cc88;
+	font-size: .9rem;
+	color: #444;
+}
+
+.card-wrapper {
+	display: flex;
+	flex-flow: row wrap;
+}
+.card-wrapper .card {
+	display: flex;
+	width: 50%;
+	padding: 6px;
+	box-sizing: border-box;
+}
+.card .card-title {
+	background: #888;
+	width: 140px;
+	padding: 5px 5px 5px 10px;
+	color: white;
+	font-weight: bold;
+	font-size: 1.35em;
+	box-sizing: border-box;
+	border-top-left-radius: 2px;
+	border-bottom-left-radius: 2px;
+}
+.card .card-content {
+	background: white;
+	width: calc(100% - 140px);
+	padding: 5px;
+	font-size: .9rem;
+	border-top-right-radius: 2px;
+	border-bottom-right-radius: 2px;
+}
 @media screen and (max-width: 480px) {
 	.accordion .a_title {
 		display: block;
@@ -383,6 +420,30 @@ article.sel {
 	.accordion .header > i {
 		font-size: 1.7em;
 		line-height: 1.1;
+	}
+	.card-wrapper {
+		display: flex;
+		flex-flow: column;
+	}
+	.card-wrapper .card {
+		display: flex;
+		width: 100%;
+		padding: 6px;
+		box-sizing: border-box;
+	}
+	.card .card-title {
+		width: 120px;
+		padding: 5px 5px 5px 10px;
+		color: white;
+		font-weight: bold;
+		font-size: 1.15em;
+	}
+	.card .card-content {
+		width: calc(100% - 120px);
+		font-size: .8rem;
+	}
+	.accordion .detail .note {
+		font-size: .8rem;
 	}
 }
 
