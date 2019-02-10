@@ -53,7 +53,7 @@ header {
 }
 .menu li.sel {
 	font-weight: bold;
-	text-shadow: 2px 2px 2px rgba(255, 255, 255, .6);
+	transform: scale(1.1, 1.1);
 	cursor: default;
 }
 .menu li:hover {
@@ -77,6 +77,7 @@ header {
 }
 #content {
 	margin-top: 110px;
+	margin-bottom: 50px;
 }
 article {
 	display: none;
@@ -173,7 +174,7 @@ article.sel {
 	}
 	.menu li:not(.menu-title) {
 		text-align: left;
-		padding: 10px 5px 10px 40px;
+		padding: 12px 5px 12px 40px;
 		position: relative;
 		letter-spacing: 2px;
 	}
@@ -183,12 +184,13 @@ article.sel {
 		font-weight: 900;
 		position: absolute;
 		left: 15px;
-		top: 12px;
+		top: 14px;
 	}
 	.menu li.sel {
 		font-weight: normal;
 		text-shadow: none;
 		background: #888;
+		transform: scale(1, 1);
 	}
 	.mask {
 		top: 70px;
@@ -263,22 +265,28 @@ article.sel {
 	cursor: pointer;
 }
 .accordion section.blue .header {
-	background: linear-gradient(#2244cc, #8899ff);
+	background: linear-gradient(#3388bb, #66aaee);
 }
 .accordion section.blue .detail {
 	background: #eef;
 }
 .accordion section.red .header {
-	background: linear-gradient(#992222, #ff6666);
+	background: linear-gradient(#bb5555, #dd7777);
 }
 .accordion section.red .detail {
 	background: #fee;
 }
 .accordion section.green .header {
-	background: linear-gradient(#006600, #44bb44)
+	background: linear-gradient(#339933, #77bb77);
 }
 .accordion section.green .detail {
 	background: #efe;
+}
+.accordion section.gray .header {
+	background: linear-gradient(#666666, #999999);
+}
+.accordion section.gray .detail {
+	background: #f5f5f5;
 }
 .accordion .title {
 	margin-right: auto;
