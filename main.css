@@ -390,6 +390,19 @@ article.sel {
 	border-top-right-radius: 2px;
 	border-bottom-right-radius: 2px;
 }
+
+em {
+	padding: 0 3px;
+	margin: 0 2px;
+	font-style: normal;
+	display: inline-block;
+	background-image: linear-gradient(0deg, #fff 20%, #ffee99 20%, #ffee99 40%, #fff 40% );
+}
+.note em {
+	color: #222;
+	background-image: linear-gradient(0deg, #f1cc88 20%, #bbddff 20%, #bbddff 40%, #f1cc88 40% );
+}
+
 @media screen and (max-width: 480px) {
 	.accordion .a_title {
 		display: block;
