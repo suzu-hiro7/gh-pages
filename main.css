@@ -107,9 +107,9 @@ article.sel {
 
 .full-screen {
 	margin: 0 auto;
-	padding: 15px;
+	padding: 15px 30px;
 	width: 100%;
-	height: calc(100vh - 100px);
+	min-height: calc(100vh - 100px);
 	box-sizing: border-box;
 }
 .full-screen p {
@@ -223,9 +223,9 @@ article.sel {
 		100% { opacity: 0;}
 	}
 	.full-screen {
-		padding: 10px;
+		padding: 10px 20px;
 		width: 100%;
-		height: calc(100vh - 70px);
+		min-height: calc(100vh - 70px);
 	}
 	.full-screen p {
 		text-indent: 20px;
@@ -239,7 +239,7 @@ article.sel {
 
 /* profile */
 .profile .full-screen {
-	width: 780px;
+	width: 800px;
 }
 .profile table {
 	width: 760px;
@@ -268,7 +268,8 @@ article.sel {
 }
 @media screen and (max-width: 480px) {
 	.profile .full-screen {
-		width: 100%;
+		width: calc(100% + 28px);
+    margin: -5px -15px 0;
 	}
 	.profile table {
 		width: 100%;
