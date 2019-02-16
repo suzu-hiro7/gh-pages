@@ -11,6 +11,7 @@ var Ctrl = {
 	close: null,
 	menu: null,
 	overlay: null,
+	toTop: null,
 	init() {
 		Ctrl.hunberger = $(".humberger");
 		Ctrl.close = $(".close");
@@ -19,6 +20,30 @@ var Ctrl = {
 		Ctrl.hunberger.onclick = Ctrl.toggleMenu;
 		Ctrl.close.onclick = () => {
 			Ctrl.toggleMenu();
+		}
+		Ctrl.toTop = $("#to-top");
+		Ctrl.toTop.onclick = () => {
+			Ctrl.toTop.classList.remove("show");
+			Ctrl.smoothScroll(window.scrollY > window.innerHeight * 2 ? -30 : -20);
+		};
+		fromEvent(window, "scroll").pipe(throttleTime(30)).subscribe(e => {
+			if (window.scrollY > window.innerHeight / 2) {
+				if (!Ctrl.toTop.classList.contains("show")) {
+					Ctrl.toTop.style.display = "block";
+					Ctrl.toTop.classList.add("show");
+				}
+			} else if (Ctrl.toTop.classList.contains("show")) {
+				Ctrl.toTop.classList.remove("show");
+				setTimeout(() => {Ctrl.toTop.style.display = "none";}, 300);
+			}
+		});
+	},
+	smoothScroll(move = -20) {
+		window.scrollBy(0, move);
+		let id = setTimeout(Ctrl.smoothScroll, 1);
+		if (0 === window.scrollY) {
+			clearTimeout(id);
+			Ctrl.toTop.style.display = "none";
 		}
 	},
 	toggleMenu() {
