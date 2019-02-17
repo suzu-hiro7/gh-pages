@@ -1,0 +1,56 @@
+@startuml
+left to right direction
+
+actor Jenkins
+
+usecase 定時処理 as "定時処理
+---
+全媒体実績取り込みバッチを実行
+"
+usecase リカバリー処理 as "リカバリー処理
+---
+アカウント単位で取り込み失敗を
+リカバリーできる媒体のリカバリー
+"
+
+Jenkins --> (定時処理)
+Jenkins --> (リカバリー処理)
+
+
+rectangle 実績データ {
+	storage 媒体A as ba
+	storage 媒体B as bb
+	storage 媒体B as bc
+	note "広告媒体の\nクリックなどの\n実績データ" as n1
+}
+
+rectangle Java {
+	rectangle {
+		(Batch A)
+		(Batch B)
+		(Batch C)
+		note "媒体毎に取り込み処理と\n共通フォーマットへ\nコンバートする" as n2
+	}
+	rectangle {
+		(共通処理)
+		note "バリデーション後\nマスタデータと実績データ\nを保存する" as n3
+	}
+}
+
+ba -> (Batch A) : api json
+bb -> (Batch B) : api csv
+bc -> (Batch C) : aws s3 csv
+(Batch A) -> (共通処理)
+(Batch B) -> (共通処理)
+(Batch C) -> (共通処理)
+
+rectangle DB {
+	database master
+	database 実績
+	database 処理結果
+}
+
+(共通処理) -> master
+(共通処理) -> 実績
+(共通処理) -> 処理結果
+@enduml

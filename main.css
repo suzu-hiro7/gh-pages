@@ -498,7 +498,7 @@ em {
 	.card-wrapper .card {
 		display: flex;
 		width: 100%;
-		padding: 6px;
+		padding: 3px 6px;
 		box-sizing: border-box;
 	}
 	.card .card-title {
@@ -571,6 +571,60 @@ em {
 	}
 }
 
+/** works */
+.works {
+	padding-top: 5px;
+}
+.svg-wrapper > p {
+	margin: 0;
+}
+.svg-title {
+	padding: 10px 10px 0 10px;
+	text-align: center;
+	color: black;
+	text-decoration: underline;
+}
+.svg-desc {
+	padding: 5px 10px;
+	color: #444;
+	font-size: .9em;
+}
+.svg {
+	width: 100%;
+	padding: 0 10px 10px 10px;
+	box-sizing: border-box;
+	position: relative;
+}
+.svg .svg-open {
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	opacity: .5;
+	cursor: pointer;
+	color: black;
+	font-size: 1.3em;
+}
+.svg img {
+	width: 100%;
+	background: white;
+}
+@media screen and (max-width: 480px) {
+	.svg-desc {
+		font-size: .75em;
+	}
+	.svg {
+		padding: 6px;
+	}
+	.svg .svg-open {
+		font-size: 1em;
+	}
+	.works.accordion .title {
+		font-size: 18px;
+	}
+	.works .card .card-title {
+		font-size: 1em;
+	}
+}
 
 
 /** mindset */

@@ -119,6 +119,23 @@ var Skill = {
 		});
 	}
 }
+var Works = {
+	init() {
+		Array.from($$(".works .header")).forEach(elm => {
+			fromEvent(elm, "click").pipe(throttleTime(500)).subscribe(ev => {
+				let sec = ev.target.parentNode;
+				while (sec.tagName.toLowerCase() != "section" || !sec.parentNode) {
+					sec = sec.parentNode;
+				}
+				if (sec.classList.contains("open")) {
+					sec.classList.remove("open");
+				} else {
+					sec.classList.add("open");
+				}
+			});
+		});
+	}
+}
 window.onload = function() {
-	[Ctrl, Menu, Skill].forEach(m => {m.init();});
+	[Ctrl, Menu, Skill, Works].forEach(m => {m.init();});
 };
