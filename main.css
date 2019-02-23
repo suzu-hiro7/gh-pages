@@ -345,6 +345,12 @@ article.sel {
 .accordion section.gray .detail {
 	background: #f5f5f5;
 }
+.accordion section.black .header {
+	background: linear-gradient(#333333, #666666);
+}
+.accordion section.black .detail {
+	background: #e1e1e1;
+}
 .accordion .title {
 	margin-right: auto;
 	font-weight: bold;
