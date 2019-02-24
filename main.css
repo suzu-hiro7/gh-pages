@@ -453,7 +453,10 @@ article.sel {
 	border-top-right-radius: 2px;
 	border-bottom-right-radius: 2px;
 }
-
+.normal-list,
+.card-content ul {
+	padding-left: 24px;
+}
 em {
 	padding: 0 3px;
 	margin: 0 2px;
@@ -517,6 +520,10 @@ em {
 	.card .card-content {
 		width: calc(100% - 120px);
 		font-size: .8rem;
+	}
+	.normal-list, 
+	.card-content ul {
+		padding-left: 20px;
 	}
 	.accordion .detail .note {
 		font-size: .8rem;
