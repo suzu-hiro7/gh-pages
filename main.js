@@ -62,7 +62,7 @@ var Ctrl = {
 		Ctrl.overlay.style.display = "none";
 	},
 	isSp() {
-		return window.screen.width <= 480;
+		return window.screen.width <= 740;
 	}
 }
 var Menu = {
