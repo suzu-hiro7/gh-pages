@@ -1,0 +1,47 @@
+@startuml
+
+control cron
+
+participant Batch
+database DB
+
+box "            Internet           " #cef
+	participant Tdnet #ccf
+end box
+
+par cronで定期的に実行
+	note over cron, Tdnet
+		TdnetからHTMLを取得しxbrlのURLを抽出して、Queueテーブルに保存する
+	end note
+	cron -> Batch : 定期的に起動
+	activate Batch
+	Batch -> Tdnet : HTML取得
+
+	Batch -> Batch : xbrlのurl一覧抽出
+
+	Batch -> DB : Queueテーブル保存
+	deactivate Batch
+
+else cronで定期的に実行
+	note over cron, Tdnet
+		xbrlを1件ずつ処理すると時間がかかるため残データがあっても、レンタルサーバーの制約により、
+		30秒経過したら処理を終了する
+	end note
+	cron -> Batch : 定期的に起動
+	activate Batch
+	Batch -> DB : Queueテーブルから 未処理のxbrlのURL一覧取得
+
+
+	loop xbrlのURL一覧 ： 30秒以内
+		Batch -> Tdnet : get xbrlファイル（zip形式）
+		Batch -> Batch : データ変換（xbrl(xml)を、phpのオブジェクトに）
+		alt 決算短信
+			Batch -> DB : 決算テーブル insert
+		else 業績予想修正
+			Batch -> DB : 予想テーブル insert
+		end
+		Batch -> DB : Queueテーブル 処理済み update
+	end
+end
+
+@enduml

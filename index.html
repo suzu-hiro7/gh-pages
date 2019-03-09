@@ -701,6 +701,45 @@
 						</div>
 					</div>
 				</section>
+				<section class="black open">
+					<div class="header">
+						<div class="title">Tdnet xbrlデータ取得(個人利用)</div>
+						<i class="fas fa-angle-up"></i>
+					</div>
+					<div class="detail">
+						<div class="card-wrapper">
+							<div class="card">
+								<div class="card-title">期間</div>
+								<div class="card-content">2015/04～</div>
+							</div>
+							<div class="card">
+								<div class="card-title">案件内容</div>
+								<div class="card-content">
+									xbrlデータの有効活用。バッチでxbrlデータを取り込む<br>
+									別途、情報系の画面を作成
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-title">技術</div>
+								<div class="card-content">
+									PHP5、MySQL
+								</div>
+							</div>
+						</div>
+						<div class="svg-wrapper">
+							<p class="svg-title">システム概要</p>
+							<p class="svg-desc">xbrl一覧取得バッチと、xbrl解析データ保存バッチを分けて実装</p>
+							<div class="svg">
+								<a class="svg-open" href="./plantuml/case2.svg" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+								<img src="./plantuml/case2.svg" width="800px">
+							</div>
+						</div>
+						<div class="note">
+							レンタルサーバーの制約がある中で、バッチ処理を２つに分ける<br>
+							xbrl取り込みバッチは実務で作成するバッチ並みに複雑です。日本基準の他、IFRS、米国基準があるため、データ変換もテーブルもそれなりに複雑
+						</div>
+					</div>
+				</section>
 			</article>
 			<article class="simple about">
 				<p class="a_title">このサイトについて</p>
@@ -746,7 +785,9 @@
 						</tr>
 						<tr>
 							<th>2019/03/09</th>
-							<td>自己紹介に「やりたい仕事」「今後伸ばしたいスキル」を追加</td>
+							<td>自己紹介に「やりたい仕事」「今後伸ばしたいスキル」を追加
+								<br>実績に個人利用の開発を追加
+							</td>
 						</tr>
 					</tbody>
 				</table>
